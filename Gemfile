@@ -7,7 +7,7 @@ gem 'rails', '3.1.1'
 
 #gem 'sqlite3'
 gem 'execjs'
-gem 'therubyracer'
+#gem 'therubyracer'
 #gem 'pg'
 gem "bcrypt-ruby", :require => "bcrypt"
 
@@ -16,6 +16,7 @@ group :development do
 end
 
 group :production do
+  gem 'therubyracer', '~> 0.9.3.beta1'
   gem 'pg'
 end
 # Gems used only for assets and not required
