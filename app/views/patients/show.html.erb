@@ -1,0 +1,14 @@
+<h1><%= @patient.name %></h1>
+
+<table>
+		<th>Timestamp</th>
+		<th>Reading</th>
+	<% @patient.patient_data.each do |datum| %>
+		<tr>
+			<td><%= datum.created_at.strftime("%b %d, %Y %H:%M") %></td>
+			<td align = center><%= datum.decimal %></td>
+		</tr>
+	<% end %>
+</table>
+</br>
+<%= link_to "Back", users_dashboard_path %>
