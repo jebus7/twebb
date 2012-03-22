@@ -3,15 +3,17 @@
 <table border = 1>
   <tr>
     <th>Patients</th>
-    <th>Time</th>
-    <th>Device</th>
+    <th>#</th>
   </tr>
+  <% @patients.each do |patient| %>
   <tr>
-    <td>Parov Stelar</td>
-    <td>Funky Time</td>
-    <td>Cellphone telephone</td>
+    <td><%= patient.name %></td>
+    <td><%= patient.id %></td>
   </tr>
+<% end %>
 </table>
+
+
 
 <%= link_to "Log out", log_out_path %>
 

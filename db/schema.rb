@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120315023134) do
+ActiveRecord::Schema.define(:version => 20120322005924) do
+
+  create_table "infos", :force => true do |t|
+    t.decimal  "decimal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "patient_data", :force => true do |t|
+    t.integer  "patient_id"
+    t.decimal  "decimal"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "patients", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "username"

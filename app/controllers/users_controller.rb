@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_filter :authorize!
+
+  def dashboard
+		@patients = Patient.all
+	end
+
   def new
     @user = User.new
   end

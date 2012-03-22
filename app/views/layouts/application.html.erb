@@ -1,18 +1,90 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Twebbsite!</title>
-  <%= stylesheet_link_tag    "application" %>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	  <title>Twebbsite!</title>
+<!--	<link href="css/admin-blue.css" rel="stylesheet" type="text/css" media="screen" /> -->
+    <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
+
+
+<html>
+
 <body>
+<div id="outer">
+<div id="header">
+<div id="header-container" class="clearfix">
+	<div class="contentwidth">
+		<div id="logo"> <h1>Twebbsite!</h1><!--<a href="index.php"><img src="images/logo.png" alt="Logo" /></a> --></div>
+		<div id="headertools">
+			<!--<p class="welcome">Hello, Admin!</p>
+			<p><a href="/" target="_blank">View Site</a></p>
+			<p><a href="login.html">Logout</a> / <a href="login.html">View Site</a></p>
+			-->
+		</div>
+	</div>
+</div>
 
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
-<%= yield %>
+<div id="menu-container" class="clearfix">
+	<div class="contentwidth">
+		<div id="menu" class="clearfix">
 
-</body>
+		<!--
+			<ul>
+				<li><a class="active" href="index.php">Home</a></li>
+				<li><a href="celebs.php">Celebs</a></li>
+				<li><a href="galleries.php">Galleries</a></li>
+				<li><a href="blog.php">Blog</a></li>
+				<li><a href="ads.php">Ads</a></li>
+				<li><a href="setup.php">Setup</a></li>
+			</ul>
+			-->
+		</div>
+	</div>
+</div>
+<div id="main">
+	<div class="contentwidth clearfix">
+
+						<div id="breadcrumbs"><!--<p><a href="/">Leaked Celebs</a> &raquo; <a href="/admin/">Admin</a> &raquo; Home</p>--></div>
+
+						<div id="singleCol">
+
+							<div class="content borders">
+
+
+								<% flash.each do |name, msg| %>
+                  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+                <% end %>
+                <%= yield %>
+
+							</div>
+
+						</div>
+
+
+					</div>
+
+				</div>
+
+
+				<div id="footer">
+
+					<div class="contentwidth clearfix">
+
+						<p>Copyright Your Business</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</body>
 </html>
 

@@ -1,7 +1,7 @@
-<h1>Twebbsite!</h1>
-
-<h2>Login to continue</h2>
-
+<div id = "menu">
+<h1>Login to continue</h1>
+</div>
+<div id = "main">
 <%= form_tag sessions_path do %>
   <p>
     <%= label_tag :username %><br/>
@@ -15,4 +15,5 @@
 <% end %>
 
 <%= link_to "About Us", about_path %>
+</div>
 
