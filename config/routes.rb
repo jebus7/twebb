@@ -1,5 +1,6 @@
 Twebb::Application.routes.draw do
-  get "patient/new"
+  resources :patients
+
 
   root :to => "sessions#new"
   get "users/dashboard"

@@ -1,19 +1,30 @@
 <h1>Patients</h1>
 
-<table border = 1>
+<table>
   <tr>
-    <th>Patients</th>
     <th>#</th>
+    <th>Patients</th>
+    <th>Status</th>
   </tr>
   <% @patients.each do |patient| %>
   <tr>
-    <td><%= patient.name %></td>
     <td><%= patient.id %></td>
+    <td><%= link_to patient.name, patient %></td>
+    <%
+      if patient.patient_data.count > 0
+      datum = patient.patient_data.last.decimal
+      color = nil
+      color = "green"  if datum.to_i == 3
+      color = "yellow" if datum.to_i == 2
+      color = "red"    if datum.to_i == 1
+      end
+    %>
+    <td style="background-color:<%= color %>"></td>
   </tr>
 <% end %>
 </table>
 
-
+</br>
 
 <%= link_to "Log out", log_out_path %>
 
