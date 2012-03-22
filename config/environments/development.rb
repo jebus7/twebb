@@ -1,6 +1,9 @@
 Twebb::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+  config.active_record.mass_assignment_sanitizer = :strict
+  config.active_record.auto_explain_threshold_in_seconds = 0.5
+
   # In the development environment your application's code is reloaded on
   # every request.  This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
