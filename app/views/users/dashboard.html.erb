@@ -9,14 +9,15 @@
   <% @patients.each do |patient| %>
   <tr>
     <td><%= patient.id %></td>
-    <td><%= link_to patient.name, patient %></td>
+    <td><%= link_to_if patient.patient_data.count > 0, patient.name, patient %></td>
     <%
+
       if patient.patient_data.count > 0
       datum = patient.patient_data.last.decimal
       color = nil
-      color = "green"  if datum.to_i == 3
-      color = "yellow" if datum.to_i == 2
-      color = "red"    if datum.to_i == 1
+      color = "green"  if datum > 2.0 && datum <=  3.0
+      color = "yellow" if datum > 1.0 && datum <=  2.0
+      color = "red"    if datum >= 0.0 && datum <= 1.0 || datum > 3.0
       end
     %>
     <td style="background-color:<%= color %>"></td>
