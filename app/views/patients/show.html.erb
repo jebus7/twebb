@@ -51,7 +51,7 @@
                         alternateGridColor: null,
                         plotBands: [{ // Light air
                             from: 0,
-                            to: 1,
+                            to: 2,
                             color: 'rgba(250, 0, 0, 0.2)',
                             label: {
                                 text: '',
@@ -60,8 +60,8 @@
                                 }
                             }
                         }, { // Light breeze
-                            from: 1,
-                            to: 2,
+                            from: 2,
+                            to: 2.25,
                             color: 'rgba(255, 255, 0, 0.2)',
                             label: {
                                 text: '',
@@ -70,8 +70,8 @@
                                 }
                             }
                         }, { // Gentle breeze
-                            from: 2,
-                            to: 3,
+                            from: 2.25,
+                            to: 2.75,
                             color: 'rgba(0, 250, 0, 0.2)',
                             label: {
                                 text: '',
@@ -80,6 +80,16 @@
                                 }
                             }
 
+                        },{ // Light breeze
+                            from: 2.75,
+                            to: 3,
+                            color: 'rgba(255, 255, 0, 0.2)',
+                            label: {
+                                text: '',
+                                style: {
+                                    color: '#606060'
+                                }
+                            }
                         },{ // Light air
                             from: 3,
                             to: 10,
